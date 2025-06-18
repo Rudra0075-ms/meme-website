@@ -1,2 +1,0 @@
-# meme-website
-fun!
