@@ -2,43 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meme Zone</title>
+  <title>Meme Site</title>
   <style>
     body {
-      background-color: #111;
+      font-family: sans-serif;
+      background: #111;
       color: white;
-      font-family: 'Arial', sans-serif;
       text-align: center;
-      padding: 2rem;
+      padding: 50px;
     }
-    h1 {
-      font-size: 3rem;
-      color: #00ffcc;
-      margin-bottom: 2rem;
-    }
-    .meme-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .meme-grid img {
-      width: 100%;
-      height: auto;
+
+    .form-box, .message-box {
+      background: #222;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 15px #00ffcc;
+      display: inline-block;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #f00;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    img {
+      margin-top: 20px;
+      max-width: 300px;
     }
   </style>
 </head>
 <body>
-  <h1>😂 Meme Zone</h1>
-  <div class="meme-grid">
-    <img src="memes/meme1.jpg" alt="Meme 1">
-    <img src="memes/meme2.jpg" alt="Meme 2">
-    <img src="memes/meme3.jpg" alt="Meme 3">
-    <img src="memes/meme4.jpg" alt="Meme 4">
-    <img src="memes/meme5.jpg" alt="Meme 5">
+
+  <h1>🧠 Meme Vault Sign-Up</h1>
+
+  <div class="form-box" id="form">
+    <input type="text" placeholder="Username"><br>
+    <input type="password" placeholder="Password"><br>
+    <button onclick="showMeme()">Sign Up</button>
   </div>
+
+  <div class="message-box hidden" id="message">
+    <h2>Welcome to the Dark Side 😂</h2>
+    <p style="color: red; font-size: 2em;"><strong>Fuck you!</strong></p>
+    <img src="https://i.imgflip.com/4/4t0m5.jpg" alt="Troll Meme">
+    <p>Just a meme. Don't rage quit 😎</p>
+  </div>
+
+  <script>
+    function showMeme() {
+      document.getElementById('form').classList.add('hidden');
+      document.getElementById('message').classList.remove('hidden');
+    }
+  </script>
+
 </body>
 </html>
